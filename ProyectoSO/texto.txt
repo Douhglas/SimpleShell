@@ -1,0 +1,66 @@
+
+#ifndef COMMANDRECORD_H
+#define COMMANDRECORD_H
+#include <string>
+using namespace std;
+
+class CommandRecord{
+private:
+    int position;
+    string command;
+    int timesRepeated;
+public:
+    CommandRecord();
+    CommandRecord(int position, string command, int timesRepeated);
+    int getPosition();
+    string getCommand();
+    int getTimesRepeated();
+    void setPosition(int position);
+    void setComand(string command);
+    void setTimesRepeated(int timesRepeated);
+};
+
+#endif // COMMANDRECORD_H
+
+
+#include "include/CommandRecord.h"
+
+CommandRecord::CommandRecord()
+{
+    //ctor
+}
+CommandRecord::CommandRecord(int position, string command, int timesRepeated)
+{
+    this.position = position;
+    this.command = command;
+    this.timesRepeated = timesRepeated;
+}
+
+int CommandRecord::getPosition()
+{
+    return position;
+}
+
+string CommandRecord::getCommand()
+{
+    return command;
+}
+
+int CommandRecord::getTimesRepeated()
+{
+    return timesRepeated;
+}
+void CommandRecord::setPosition(int position)
+{
+    this.position = position;
+}
+
+void CommandRecord::setComand(string command)
+{
+    this.command = command;
+}
+
+void CommandRecord::setTimesRepeated(int timesRepeated)
+{
+    this.timesRepeated = timesRepeated;
+}

@@ -1,0 +1,148 @@
+# depslib dependency file v1.0
+1743785977 source:/home/ahab/ProyectoSO/main.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<vector>
+	<unistd.h>
+	<sys/types.h>
+	<sys/wait.h>
+	<regex>
+	<readline/readline.h>
+	<readline/history.h>
+	"Shell.h"
+
+1743785428 /home/ahab/ProyectoSO/Shell.h
+	<iostream>
+	<vector>
+	<string>
+	<unistd.h>
+	<sys/types.h>
+	<sys/wait.h>
+	"CommandRecord.h"
+
+1743785792 source:/home/ahab/ProyectoSO/Shell.cpp
+	"Shell.h"
+
+1741301213 /usr/include/unistd.h
+	<features.h>
+	<bits/posix_opt.h>
+	<bits/environments.h>
+	<bits/types.h>
+	<stddef.h>
+	<bits/confname.h>
+	<bits/getopt_posix.h>
+	<bits/unistd.h>
+	<bits/unistd_ext.h>
+
+1741301213 /usr/include/features.h
+	<features-time64.h>
+	<stdc-predef.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1741301213 /usr/include/features-time64.h
+	<bits/wordsize.h>
+	<bits/timesize.h>
+
+1741301213 /usr/include/stdc-predef.h
+
+1672778985 /usr/include/readline/readline.h
+	"rlstdc.h"
+	"rltypedefs.h"
+	"keymaps.h"
+	"tilde.h"
+	<stdio.h>
+	<readline/rlstdc.h>
+	<readline/rltypedefs.h>
+	<readline/keymaps.h>
+	<readline/tilde.h>
+
+1672778985 /usr/include/readline/rlstdc.h
+
+1672778985 /usr/include/readline/rltypedefs.h
+
+1672778985 /usr/include/readline/keymaps.h
+	"rlstdc.h"
+	"chardefs.h"
+	"rltypedefs.h"
+	<readline/rlstdc.h>
+	<readline/chardefs.h>
+	<readline/rltypedefs.h>
+
+1672778985 /usr/include/readline/chardefs.h
+	<ctype.h>
+	<string.h>
+
+1741301213 /usr/include/ctype.h
+	<features.h>
+	<bits/types.h>
+	<bits/endian.h>
+	<bits/types/locale_t.h>
+
+1741301213 /usr/include/string.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/types/locale_t.h>
+	<strings.h>
+	<bits/string_fortified.h>
+
+1741301213 /usr/include/strings.h
+	<features.h>
+	<stddef.h>
+	<bits/types/locale_t.h>
+	<bits/strings_fortified.h>
+
+1672778985 /usr/include/readline/tilde.h
+
+1741301213 /usr/include/stdio.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<stdarg.h>
+	<bits/types.h>
+	<bits/types/__fpos_t.h>
+	<bits/types/__fpos64_t.h>
+	<bits/types/__FILE.h>
+	<bits/types/FILE.h>
+	<bits/types/struct_FILE.h>
+	<bits/types/cookie_io_functions_t.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/floatn.h>
+	<bits/getopt_posix.h>
+	<bits/stdio2-decl.h>
+	<bits/stdio-ldbl.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+
+1672778985 /usr/include/readline/history.h
+	<time.h>
+	"rlstdc.h"
+	"rltypedefs.h"
+	<stdio.h>
+	<readline/rlstdc.h>
+	<readline/rltypedefs.h>
+
+1741301213 /usr/include/time.h
+	<features.h>
+	<stddef.h>
+	<bits/time.h>
+	<bits/types/clock_t.h>
+	<bits/types/time_t.h>
+	<bits/types/struct_tm.h>
+	<bits/types/struct_timespec.h>
+	<bits/types/clockid_t.h>
+	<bits/types/timer_t.h>
+	<bits/types/struct_itimerspec.h>
+	<bits/types/locale_t.h>
+
+1742847602 /home/ahab/ProyectoSO/include/CommandRecord.h
+	<iostream>
+	<string>
+
+1743745685 /home/ahab/ProyectoSO/CommandRecord.h
+	<string>
+
+1743745836 source:/home/ahab/ProyectoSO/CommandRecord.cpp
+	"CommandRecord.h"
+
