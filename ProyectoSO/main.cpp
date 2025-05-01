@@ -59,13 +59,14 @@ void specialCommand(string& userInput){
         int commandPosition = stoi(match[1]);
         string command = shell.getCommand(commandPosition);
         if(command.empty()){
-            cout<< YELLOW "No se encontro el comando en la posicion " RESET << commandPosition << YELLOW " del historial" RESET<<endl;
+            cout<< YELLOW << "No se encontro el comando en la posicion " << RESET << commandPosition << YELLOW << " del historial" << RESET<<endl;
             return;
         }else{
           userInput = regex_replace(userInput,pattern,command);
         }
     }
 }
+
 int main() {
 using_history();
 stifle_history(10);
@@ -73,8 +74,9 @@ stifle_history(10);
         isBackgroundProcess = false;
         hasPipe = false;
 
-        char* inputChar = readline(GREEN "Ahab> "RESET);
+        char* inputChar = readline((GREEN + string("Ahab> ") + RESET).c_str());
         string userInput(inputChar);
+        if (userInput == "exit") break;
         specialCommand(userInput);
         inputChar = new char[userInput.size() + 1];
         strcpy(inputChar,userInput.c_str());
@@ -92,10 +94,23 @@ stifle_history(10);
             firstCommand.pop_back();
             isBackgroundProcess = true;
         }
-        if (hasPipe) {
-            if (shell.executePipe(firstCommand,secondCommand) == 0) continue;
-        } else {
-            shell.executeProcess(firstCommand);
+        if (!firstCommand.empty()) {
+            if (firstCommand[0] == "cd") {
+                if (firstCommand.size() > 1) {
+                    if (chdir(firstCommand[1].c_str()) != 0) {
+                        perror("cd");
+                    }
+                } else {
+                    const char* home = getenv("HOME");
+                    if (home) chdir(home);
+                }
+                continue;
+            }
+            if (hasPipe) {
+                if (shell.executePipe(firstCommand, secondCommand) == 0) continue;
+            } else {
+                shell.executeProcess(firstCommand);
+            }
         }
     }
 
