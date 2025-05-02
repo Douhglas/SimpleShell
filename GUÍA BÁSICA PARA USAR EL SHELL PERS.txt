@@ -1,0 +1,48 @@
+GUÍA BÁSICA PARA USAR EL SHELL PERSONALIZADO "ahab" EN UNA TERMINAL INTERACTIVA
+-------------------------------------------------------------------------------
+
+1. COMPILAR EL SHELL
+---------------------
+Ubícate en la carpeta del proyecto (por ejemplo: ProyectoSO) y ejecuta el siguiente comando para compilar tu shell:
+
+    g++ -o ahab main.cpp Shell.cpp CommandRecord.cpp -lreadline
+
+Este comando generará un archivo ejecutable llamado "ahab".
+
+
+2. MOVER EL EJECUTABLE A UNA RUTA GLOBAL
+-----------------------------------------
+Para poder ejecutar el shell desde cualquier parte del sistema, mueve el ejecutable a una ruta global:
+
+    sudo mv ahab /usr/local/bin/ahab
+    sudo chmod +x /usr/local/bin/ahab
+
+Esto lo instalará correctamente como un comando del sistema.
+
+
+3. EJECUTAR EL SHELL PERSONALIZADO
+----------------------------------
+Una vez instalado, puedes usar tu shell simplemente escribiendo en la terminal:
+
+    ahab
+
+
+4. HACER QUE AHAB SE EJECUTE SIEMPRE AL ABRIR LA TERMINAL
+----------------------------------------------------------
+Si deseas que se abra automáticamente cada vez que inicias una terminal, sigue estos pasos:
+
+    a) Abre el archivo de configuración del shell con:
+
+        nano ~/.bashrc
+
+    b) Al final del archivo, agrega las siguientes líneas:
+
+        if [[ $- == *i* ]] && [[ -f /usr/local/bin/ahab ]]; then
+            exec /usr/local/bin/ahab
+        fi
+
+    c) Guarda los cambios (Ctrl+O, Enter) y cierra el editor (Ctrl+X).
+
+    d) Cierra y vuelve a abrir la terminal.
+
+Desde ahora, cada vez que abras una terminal interactiva, se iniciará automáticamente tu shell "ahab".

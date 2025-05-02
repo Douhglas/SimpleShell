@@ -70,17 +70,17 @@ void specialCommand(string& userInput){
 int main() {
 using_history();
 stifle_history(10);
-    while (true) {
+    while (true) { //bucle principal
         isBackgroundProcess = false;
         hasPipe = false;
 
         char* inputChar = readline((GREEN + string("Ahab> ") + RESET).c_str());
         string userInput(inputChar);
         if (userInput == "exit") break;
-        specialCommand(userInput);
+        specialCommand(userInput); // Revisa si hay un !n, y lo reemplaza por el comando correspondiente 
         inputChar = new char[userInput.size() + 1];
         strcpy(inputChar,userInput.c_str());
-        addCommand(inputChar, userInput);
+        addCommand(inputChar, userInput);//Agrega el comando al historial del shell y del readline
         free(inputChar);
 
         if (userInput.empty()) continue;
